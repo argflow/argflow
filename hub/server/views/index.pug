@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  include mixins/search
+  include mixins/navbar
+  +navbar
+
+  section.hero
+    .container
+      .centered-hero-box
+        h1.title.center Argflow Hub
+        +search

@@ -1,0 +1,50 @@
+mixin search(query)
+    div(class='upload_form')
+        form(action='search')
+            if query == undefined
+                .field
+                    input#search-input.input.is-rounded(type='text' name='q' value=query)
+                input#search-btn.button.centered-horizontally(type='submit' value='Search')
+            else
+                .columns
+                    .column.is-four-fifths
+                        .field
+                            input#search-input.input.is-rounded(type='text' name='q' value=query)
+                    .column.align-left
+                        input#search-btn.button(type='submit' value='Search')
+
+        script(src='js/search.js')
+
+mixin result-box(result)
+    div.search-result
+        if result.resultType == 'dataset'
+            article.message.is-primary
+                .message-header
+                    p= result.name
+                .columns
+                    .column
+                        p dataset
+                    .column
+                    .column
+                        p slug: #{result.slug}
+                    .column
+                        p author: #{result.author}
+                p #{result.description}
+        else
+            article.message.is-warning
+                .message-header
+                    p= result.name
+                .columns
+                    .column
+                        p #{result.type} Model
+                    .column
+                        if result.dataset == undefined
+                            p trained on: unknown
+                        else
+                            p trained on: #{result.dataset}
+                    .column
+                        p slug: #{result.slug}
+                    .column
+                        p author: #{result.author}
+                p #{result.description}
+                br

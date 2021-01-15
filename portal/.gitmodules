@@ -1,0 +1,3 @@
+[submodule "argflow"]
+	path = argflow
+	url = ../../xai-crew/argflow.git

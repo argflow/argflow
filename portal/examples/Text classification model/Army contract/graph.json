@@ -1,0 +1,260 @@
+{
+  "name": "Word cloud example",
+  "input": ["0"],
+  "conclusion": ["5"],
+  "nodes": {
+    "0": {
+      "node_type": "input",
+      "content_type": "wdcloud",
+      "children": {
+        "1": {
+          "contribution_type": "neutral"
+        },
+        "2": {
+          "contribution_type": "neutral"
+        },
+        "3": {
+          "contribution_type": "neutral"
+        },
+        "4": {
+          "contribution_type": "neutral"
+        }
+      },
+      "payload": [
+        ["northrop", 0.3],
+        ["grumman", 0.5],
+        ["corp", 0.8],
+        ["on", -0.2],
+        ["monday", 0],
+        ["said", 0],
+        ["it", 0],
+        ["received", 0],
+        ["a", 0],
+        ["10", 0],
+        ["year", 0],
+        ["$408", 0],
+        ["million", 0],
+        ["army", 0],
+        ["contract", 0],
+        ["to", 0],
+        ["provide", 0],
+        ["simulated", -0.3],
+        ["battle", 0.1],
+        ["command", -0.3],
+        ["training", -0.2],
+        ["support", 0],
+        ["to", 0.1],
+        ["army", -0.5],
+        ["corps", -0.5],
+        ["commanders", -0.8],
+        ["the", 0.2],
+        ["latest", -0.2],
+        ["award", 0],
+        ["in", 0]
+      ]
+    },
+    "1": {
+      "node_type": "regular",
+      "content_type": "wdcloud",
+      "strength": 0.8,
+      "children": {
+        "5": {
+          "contribution_type": "support"
+        }
+      },
+      "payload": {
+        "filter": {
+          "payload": [
+            ["northrop", 0],
+            ["grumman", 0],
+            ["corp", 0],
+            ["on", 0],
+            ["monday", 0],
+            ["said", 0],
+            ["it", 0],
+            ["received", 0],
+            ["a", 0],
+            ["10", 0],
+            ["year", 0],
+            ["$408", 0],
+            ["million", 0],
+            ["army", 0],
+            ["contract", 0],
+            ["to", 0],
+            ["provide", 0],
+            ["simulated", 0],
+            ["battle", 0],
+            ["command", 0],
+            ["training", 0],
+            ["support", 0],
+            ["to", 0],
+            ["army", 0.5],
+            ["corps", 0.8],
+            ["commanders", 0.8],
+            ["the", 0],
+            ["latest", 0],
+            ["award", 0],
+            ["in", 0]
+          ]
+        },
+        "feature": {
+          "payload": "Text classification model/Army contract/images/03.png"
+        }
+      }
+    },
+    "2": {
+      "node_type": "regular",
+      "content_type": "wdcloud",
+      "strength": 0.6,
+      "children": {
+        "5": {
+          "contribution_type": "support"
+        }
+      },
+      "payload": {
+        "filter": {
+          "payload": [
+            ["northrop", 0.3],
+            ["grumman", 0.5],
+            ["corp", 0.8],
+            ["on", -0.2],
+            ["monday", 0],
+            ["said", 0],
+            ["it", 0],
+            ["received", 0],
+            ["a", 0],
+            ["10", 0],
+            ["year", 0],
+            ["$408", 0],
+            ["million", 0],
+            ["army", 0],
+            ["contract", 0],
+            ["to", 0],
+            ["provide", 0],
+            ["simulated", 0],
+            ["battle", 0],
+            ["command", 0],
+            ["training", 0],
+            ["support", 0],
+            ["to", 0],
+            ["army", 0],
+            ["corps", 0],
+            ["commanders", 0],
+            ["the", 0],
+            ["latest", 0],
+            ["award", 0],
+            ["in", 0]
+          ]
+        },
+        "feature": {
+          "payload": "Text classification model/Army contract/images/02.png"
+        }
+      }
+    },
+    "3": {
+      "node_type": "regular",
+      "content_type": "wdcloud",
+      "strength": 0.4,
+      "children": {
+        "5": {
+          "contribution_type": "attack"
+        }
+      },
+      "payload": {
+        "filter": {
+          "payload": [
+            ["northrop", 0],
+            ["grumman", 0],
+            ["corp", 0],
+            ["on", 0],
+            ["monday", 0],
+            ["said", 0],
+            ["it", 0],
+            ["received", 0],
+            ["a", 0],
+            ["10", 0],
+            ["year", 0],
+            ["$408", 0],
+            ["million", 0],
+            ["army", 0],
+            ["contract", 0],
+            ["to", 0],
+            ["provide", 0],
+            ["simulated", -0.3],
+            ["battle", 0.1],
+            ["command", -0.3],
+            ["training", -0.2],
+            ["support", 0],
+            ["to", 0],
+            ["army", 0],
+            ["corps", 0],
+            ["commanders", 0],
+            ["the", 0],
+            ["latest", 0],
+            ["award", 0],
+            ["in", 0]
+          ]
+        },
+        "feature": {
+          "payload": "Text classification model/Army contract/images/01.png"
+        }
+      }
+    },
+    "4": {
+      "node_type": "regular",
+      "content_type": "wdcloud",
+      "strength": 0.2,
+      "children": {
+        "5": {
+          "contribution_type": "attack"
+        }
+      },
+      "payload": {
+        "filter": {
+          "payload": [
+            ["northrop", 0],
+            ["grumman", 0],
+            ["corp", 0],
+            ["on", 0],
+            ["monday", 0],
+            ["said", 0],
+            ["it", 0],
+            ["received", 0],
+            ["a", 0],
+            ["10", 0],
+            ["year", 0],
+            ["$408", 0],
+            ["million", 0],
+            ["army", 0],
+            ["contract", 0],
+            ["to", 0],
+            ["provide", 0],
+            ["simulated", 0],
+            ["battle", 0],
+            ["command", 0],
+            ["training", 0],
+            ["support", 0],
+            ["to", 0.1],
+            ["army", 0],
+            ["corps", 0],
+            ["commanders", 0],
+            ["the", 0.2],
+            ["latest", -0.2],
+            ["award", 0],
+            ["in", 0]
+          ]
+        },
+        "feature": {
+          "payload": "Text classification model/Army contract/images/00.png"
+        }
+      }
+    },
+    "5": {
+      "node_type": "conclusion",
+      "content_type": "string",
+      "children": {},
+      "certainty": 64.97,
+      "payload": "Business"
+    }
+  }
+}

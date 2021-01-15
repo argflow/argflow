@@ -1,0 +1,15 @@
+mixin navbar
+    nav.navbar
+        .navbar-menu
+            .navbar-start
+                a.navbar-item(href='/') Search
+                a.navbar-item(href='upload') Upload
+        .navbar-end
+            .navbar-item
+                .buttons
+                if authenticated
+                    a.button.is-light(href='auth/logout') Log out
+                else
+                    a.button.is-primary(href='login?register=1') Sign up
+                    a.button.is-light(href='login') Log in
+                    

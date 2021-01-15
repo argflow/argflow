@@ -1,0 +1,10 @@
+pages:
+  image: python:latest
+  script:
+    - pip install -r requirements.txt
+    - mkdocs build -d public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master

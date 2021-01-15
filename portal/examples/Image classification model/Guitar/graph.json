@@ -1,0 +1,189 @@
+{
+  "name": "Guitar",
+  "input": ["0"],
+  "conclusion": ["9"],
+  "nodes": {
+    "0": {
+      "node_type": "input",
+      "content_type": "image",
+      "children": {
+        "1": {
+          "contribution_type": "neutral"
+        },
+        "2": {
+          "contribution_type": "neutral"
+        },
+        "3": {
+          "contribution_type": "neutral"
+        },
+        "4": {
+          "contribution_type": "neutral"
+        },
+        "5": {
+          "contribution_type": "neutral"
+        },
+        "6": {
+          "contribution_type": "neutral"
+        },
+        "7": {
+          "contribution_type": "neutral"
+        },
+        "8": {
+          "contribution_type": "neutral"
+        }
+      },
+      "payload": "Image classification model/Guitar/images/Guitar.png"
+    },
+    "1": {
+      "node_type": "regular",
+      "content_type": "image",
+      "strength": 1.1090660095214844,
+      "children": {
+        "9": {
+          "contribution_type": "support"
+        }
+      },
+      "payload": {
+        "filter": {
+          "payload": "Image classification model/Guitar/images/filters/310.png"
+        },
+        "feature": {
+          "payload": "Image classification model/Guitar/images/features/310.png"
+        }
+      }
+    },
+    "2": {
+      "node_type": "regular",
+      "content_type": "image",
+      "strength": 0.8735422492027283,
+      "children": {
+        "9": {
+          "contribution_type": "support"
+        }
+      },
+      "payload": {
+        "filter": {
+          "payload": "Image classification model/Guitar/images/filters/155.png"
+        },
+        "feature": {
+          "payload": "Image classification model/Guitar/images/features/155.png"
+        }
+      }
+    },
+    "3": {
+      "node_type": "regular",
+      "content_type": "image",
+      "strength": 0.5264338850975037,
+      "children": {
+        "9": {
+          "contribution_type": "support"
+        }
+      },
+      "payload": {
+        "filter": {
+          "payload": "Image classification model/Guitar/images/filters/113.png"
+        },
+        "feature": {
+          "payload": "Image classification model/Guitar/images/features/113.png"
+        }
+      }
+    },
+    "4": {
+      "node_type": "regular",
+      "content_type": "image",
+      "strength": 0.4991571009159088,
+      "children": {
+        "9": {
+          "contribution_type": "support"
+        }
+      },
+      "payload": {
+        "filter": {
+          "payload": "Image classification model/Guitar/images/filters/453.png"
+        },
+        "feature": {
+          "payload": "Image classification model/Guitar/images/features/453.png"
+        }
+      }
+    },
+    "5": {
+      "node_type": "regular",
+      "content_type": "image",
+      "strength": 0.3920593559741974,
+      "children": {
+        "9": {
+          "contribution_type": "support"
+        }
+      },
+      "payload": {
+        "filter": {
+          "payload": "Image classification model/Guitar/images/filters/276.png"
+        },
+        "feature": {
+          "payload": "Image classification model/Guitar/images/features/276.png"
+        }
+      }
+    },
+    "6": {
+      "node_type": "regular",
+      "content_type": "image",
+      "strength": 0.26412782073020935,
+      "children": {
+        "9": {
+          "contribution_type": "support"
+        }
+      },
+      "payload": {
+        "filter": {
+          "payload": "Image classification model/Guitar/images/filters/98.png"
+        },
+        "feature": {
+          "payload": "Image classification model/Guitar/images/features/98.png"
+        }
+      }
+    },
+    "7": {
+      "node_type": "regular",
+      "content_type": "image",
+      "strength": 0.21358107030391693,
+      "children": {
+        "9": {
+          "contribution_type": "support"
+        }
+      },
+      "payload": {
+        "filter": {
+          "payload": "Image classification model/Guitar/images/filters/495.png"
+        },
+        "feature": {
+          "payload": "Image classification model/Guitar/images/features/495.png"
+        }
+      }
+    },
+    "8": {
+      "node_type": "regular",
+      "content_type": "image",
+      "strength": 0.15621580183506012,
+      "children": {
+        "9": {
+          "contribution_type": "support"
+        }
+      },
+      "payload": {
+        "filter": {
+          "payload": "Image classification model/Guitar/images/filters/398.png"
+        },
+        "feature": {
+          "payload": "Image classification model/Guitar/images/features/398.png"
+        }
+      }
+    },
+    "9": {
+      "node_type": "conclusion",
+      "content_type": "string",
+      "children": {},
+      "certainty": 80.23,
+      "payload": "electric_guitar"
+    }
+  }
+}

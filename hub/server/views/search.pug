@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    include mixins/search
+    include mixins/navbar
+    +navbar
+    .container
+        +search(query)
+        br
+        p Found #{results.length} results.
+        br
+        each result in results
+            +result-box(result)

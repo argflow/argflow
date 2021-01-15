@@ -1,0 +1,49 @@
+{
+  "conclusion": ["carrot"],
+  "input": ["picture of carrot"],
+  "name": "GAF",
+  "nodes": {
+    "carrot": {
+      "certainty": 50.0,
+      "children": {},
+      "content_type": "string",
+      "node_type": "conclusion",
+      "payload": "1"
+    },
+    "green": {
+      "children": {
+        "carrot": {
+          "contribution_type": "attack"
+        }
+      },
+      "content_type": "string",
+      "node_type": "regular",
+      "payload": "green leaves",
+      "strength": 2.0
+    },
+    "orange": {
+      "children": {
+        "carrot": {
+          "contribution_type": "support"
+        }
+      },
+      "content_type": "string",
+      "node_type": "regular",
+      "payload": "orange body",
+      "strength": 1.0
+    },
+    "picture of carrot": {
+      "children": {
+        "green": {
+          "contribution_type": "neutral"
+        },
+        "orange": {
+          "contribution_type": "neutral"
+        }
+      },
+      "content_type": "string",
+      "node_type": "input",
+      "payload": "picture"
+    }
+  }
+}

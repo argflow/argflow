@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  include mixins/auth
+  include mixins/navbar
+  +navbar
+  
+  section.hero
+    .container
+      .centered-hero-box
+        .tabs.is-centered.is-boxed
+          ul
+            if register
+              li#login-tab-li 
+                a#login-tab-btn Log in
+              li#register-tab-li.is-active
+                a#register-tab-btn Sign up
+            else
+              li#login-tab-li.is-active 
+                a#login-tab-btn Log in
+              li#register-tab-li
+                a#register-tab-btn Sign up
+        if register
+          #login-tab.hidden
+            +login-form
+          #register-tab
+            +register-form
+        else
+          #login-tab
+            +login-form
+          #register-tab.hidden
+            +register-form
+
+
+  script(src='/js/login.js')

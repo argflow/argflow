@@ -1,0 +1,35 @@
+site_name: Argflow Docs
+
+nav:
+  - Home: index.md
+
+  - Argflow:
+      - Installation: argflow/index.md
+      - Argumentation Framework: argflow/frameworks.md
+      - Chi: argflow/chi.md
+      - GAF: argflow/gaf.md
+      - GAFExtractor: argflow/gafextractor.md
+      - Hub: argflow/hub.md
+      - Influence Graph: argflow/influences.md
+      - Mappers: argflow/mappers.md
+      - Models: argflow/models.md
+      - Payload: argflow/payload.md
+      - Portal: argflow/portal.md
+  - Portal:
+      - Usage: portal/index.md
+      - Architecture: portal/architecture.md
+      - Visualisers: portal/visualisers.md
+  - ArgHub:
+      - Installation: hub/index.md
+      - API: hub/api.md
+
+theme:
+  name: material
+  features:
+    - navigation.expand
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.superfences

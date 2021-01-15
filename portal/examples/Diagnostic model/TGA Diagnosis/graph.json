@@ -1,0 +1,142 @@
+{
+    "name": "Disease graph example",
+    "input": ["0", "1", "2", "3"],
+    "conclusion": ["11"],
+    "nodes": {
+      "0": {
+        "node_type": "input",
+        "content_type": "string",
+        "strength": 1,
+        "children": {
+          "4": {
+              "contribution_type": "attack"
+          }
+        },
+        "payload": "Age 0-3 days"
+      },
+      "1": {
+        "node_type": "input",
+        "content_type": "string",
+        "strength": 1,
+        "children": {
+          "5": {
+            "contribution_type": "support"
+          }
+        },
+        "payload": "Grunting Report no"
+      },
+      "2": {
+        "node_type": "input",
+        "content_type": "string",
+        "strength": 1,
+        "children": {
+          "6": {
+            "contribution_type": "support"
+          }
+        },
+        "payload": "XRay Report Grd_Glass"
+      },
+      "3": {
+        "node_type": "input",
+        "content_type": "string",
+        "strength": 1,
+        "children": {
+          "7": {
+            "contribution_type": "attack"
+          }
+        },
+        "payload": "Lower Body O2 < 5"
+      },
+      "4": {
+        "node_type": "regular",
+        "content_type": "string",
+        "strength": 1,
+        "children": {
+          "11": {
+            "contribution_type": "support"
+          }
+        },
+        "payload": "Sick no"
+      },
+      "5": {
+        "node_type": "regular",
+        "content_type": "string",
+        "strength": 1,
+        "children": {
+          "4": {
+            "contribution_type": "support"
+          },
+          "8": {
+            "contribution_type": "support"
+          }
+        },
+        "payload": "Grunting no"
+      },
+      "6": {
+        "node_type": "regular",
+        "content_type": "string",
+        "strength": 1,
+        "children": {
+          "8": {
+            "contribution_type": "support"
+          }
+        },
+        "payload": "Chest Xray Grd_Class"
+      },
+      "7": {
+        "node_type": "regular",
+        "content_type": "string",
+        "strength": 1,
+        "children": {
+          "9": {
+            "contribution_type": "support"
+          },
+          "10": {
+              "contribution_type": "attack"
+          }
+        },
+        "payload": "Hypoxia Distrib"
+      },
+      "8": {
+        "node_type": "regular",
+        "content_type": "string",
+        "strength": 1,
+        "children": {
+          "11": {
+            "contribution_type": "attack"
+          }
+        },
+        "payload": "Lung Parench Congested"
+      },
+      "9": {
+        "node_type": "regular",
+        "content_type": "string",
+        "strength": 1,
+        "children": {
+            "11": {
+                "contribution_type": "attack"
+            }
+        },
+        "payload": "Duct Flow Lt to Rt"
+      },
+      "10": {
+        "node_type": "regular",
+        "content_type": "string",
+        "strength": 1,
+        "children": {
+          "11": {
+            "contribution_type": "support"
+          }
+        },
+        "payload": "Cardiac Mixing Trasp."
+      },
+      "11": {
+        "node_type": "conclusion",
+        "content_type": "string",
+        "children": {},
+        "certainty": 87.9,
+        "payload": "Disease TGA"
+      }
+    }
+  }
+  

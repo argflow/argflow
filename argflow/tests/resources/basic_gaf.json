@@ -1,0 +1,36 @@
+{
+  "conclusion": ["3"],
+  "input": [],
+  "name": "GAF",
+  "nodes": {
+    "1": {
+      "children": {
+        "2": {
+          "contribution_type": "attack"
+        }
+      },
+      "content_type": "string",
+      "node_type": "regular",
+      "payload": "1",
+      "strength": 1.0
+    },
+    "2": {
+      "children": {
+        "3": {
+          "contribution_type": "support"
+        }
+      },
+      "content_type": "string",
+      "node_type": "regular",
+      "payload": "2",
+      "strength": 2.0
+    },
+    "3": {
+      "certainty": 50.0,
+      "children": {},
+      "content_type": "string",
+      "node_type": "conclusion",
+      "payload": "1"
+    }
+  }
+}

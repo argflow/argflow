@@ -1,0 +1,15 @@
+mixin login-form
+  form(method="post" enctype="multipart/form-data" action="/auth/login")
+    .field
+      input.input(type="text" placeholder="username" name="username" maxlength="20" required)
+    .field
+      input.input(type="password" placeholder="password" name="password" required)
+    input.button.centered-horizontally(type="submit" value="Log in")
+
+mixin register-form
+  form(method="post" enctype="multipart/form-data" action="/auth/register")
+    .field
+      input.input(type="text" placeholder="username" name="username" maxlength="20" required)
+    .field
+      input.input(type="password" placeholder="password" name="password" required)
+    input.button.centered-horizontally(type="submit" value="Sign up")

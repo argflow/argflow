@@ -1,0 +1,21 @@
+test:
+        stage: test
+        image: tensorflow/tensorflow:latest
+        script:
+                - pip install .
+                - pip install -r requirements.txt
+                - python3 -m unittest discover
+        except:
+                - merge_requests
+
+test-mr:
+        stage: test
+        image: tensorflow/tensorflow:latest
+        script:
+                - pip install .
+                - pip install -r requirements.txt
+                - coverage run --source=argflow -m unittest discover
+                - coverage report
+        only:
+                - merge_requests
+        coverage: '/^TOTAL.*\s+(\d+\%)$/'

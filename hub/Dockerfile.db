@@ -1,0 +1,4 @@
+FROM postgres:latest
+
+COPY databases/schemas/*.sql ./schemas/
+COPY databases/init.sh /docker-entrypoint-initdb.d/

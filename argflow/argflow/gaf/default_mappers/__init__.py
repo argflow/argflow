@@ -1,0 +1,1 @@
+from .defaultmappers import DefaultConvolutionalCharacterisationMapper, DefaultConvolutionalInfluenceMapper, DefaultConvolutionalStrengthMapper

@@ -1,0 +1,18 @@
+.center {
+  text-align: center;
+}
+
+.centered-hero-box {
+  margin-top: 30%;
+  width: 50vw;
+  transform: translate(0, -30%);
+}
+
+.centered-horizontally {
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,279 @@
+openapi: 3.0.0
+
+info:
+  title: ArgFlow UI API
+  description: API for use by the ArgFlow UI application.
+  version: 0.1.0
+
+paths:
+  /api/models:
+    get:
+      summary: Returns a list of all saved models.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    dirname:
+                      type: string
+                    dirsize:
+                      type: number
+  
+  /api/models/{model_name}:
+    delete:
+      summary: Deletes a model along with all associated explanations.
+      parameters:
+        - name: model_name
+          in: path
+          type: string
+          required: true
+      responses:
+        "204":
+          description: Success
+    post:
+      summary: Adds a new model.
+      parameters:
+        - name: model_name
+          in: path
+          type: string
+          required: true
+        - name: model_path
+          in: body
+          type: string
+          required: true
+      responses:
+        "200":
+          description: OK
+
+  /api/models/{model_name}/explanations:
+    get:
+      summary: Returns a list of all explanations associated with a model.
+      parameters:
+        - name: model_name
+          in: path
+          type: string
+          required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    path:
+                      type: string
+                    size:
+                      type: number
+
+  /api/models/{model_name}/explanations/{explanation_name}:
+    get:
+      summary: Returns an explanation identified by name.
+      parameters:
+        - name: model_name
+          in: path
+          type: string
+          required: true
+        - name: explanation_name
+          in: path
+          type: string
+          required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  explanation:
+                    $ref: "#/components/schemas/ExplanationGraph"
+                  interactions:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        node:
+                          type: number
+                        direction:
+                          type: string
+                  interaction_results:
+                    type: object
+                    properties:
+                      endpoint:
+                        type: number
+                      contribution:
+                        type: object
+                        properties:
+                          contribution_type:
+                            type: string
+    delete:
+      summary: Deletes an explanation.
+      parameters:
+        - name: model_name
+          in: path
+          type: string
+          required: true
+        - name: explanation_name
+          in: path
+          type: string
+          required: true
+      responses:
+        "204":
+          description: OK
+    post:
+      summary: Creates a new explanation.
+      parameters:
+        - name: model_name
+          in: path
+          type: string
+          required: true
+        - name: explanation_name
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          required: true
+      responses:
+        "200":
+          description: OK
+
+
+  /api/models/{model_name}/explanations/{explanation_name}/visualiser/{visualiser_id}:
+    post:
+      summary: Fetches the explanation view associated with the given visualiser, possibly changing it.
+      parameters:
+        - name: model_name
+          in: path
+          type: string
+          required: true
+        - name: explanation_name
+          in: path
+          type: string
+          required: true
+        - name: visualiser_id
+          in: path
+          type: string
+          required: true
+        - name: visualiser_data
+          in: body
+          type: object
+      responses:
+        "200":
+          description: OK
+
+  /api/resources/{path}:
+    get:
+      summary: Returns a single resource for viewing.
+      parameters:
+        - name: path
+          in: path
+          type: string
+          required: true
+      responses:
+        "200":
+          description: OK
+
+  /api/visualisers:
+    get:
+      summary: Returns a list of all registered visualisers.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    id:
+                      type: string
+                    main:
+                      type: string
+
+  /api/chis:
+    get:
+      summary: Returns a list of the available chis.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    value:
+                      type: string
+  
+  /api/hub/enabled:
+    get:
+      summary: Retruns true iff the hub is enabled.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: boolean
+
+  /api/hub/models/search:
+    get:
+      summary: Performs search on the hub.
+      responses:
+        "200":
+          description: OK
+                
+components:
+  schemas:
+    ExplanationGraph:
+      properties:
+        name:
+          type: string
+        input:
+          type: array
+          items:
+            type: number
+        conclusion:
+          type: array
+          items:
+            type: number
+        nodes:
+          type: array
+          items:
+            type: object
+            properties:
+              node_type:
+                type: string
+              content_type:
+                type: string
+              strength:
+                type: number
+              children:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    contribution_type:
+                      type: string
+              payload:
+                type: object

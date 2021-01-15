@@ -1,0 +1,50 @@
+mixin dataset-upload
+    form(method="post" enctype="multipart/form-data" action="/api/dataset")
+        .field
+            label.label Dataset Name
+            input.input(type="text" placeholder="Dataset Name" name="name" required)
+        .field
+            label.label Dataset Slug
+            input.input(type="text" placeholder="Dataset Slug" name="slug" required)
+        .field
+            label.label Description
+            input.input(type="text" placeholder="Write a short description of the dataset..." name="description")
+        .field
+            .file.is-success
+                label.file-label
+                    input.file-input(type="file" name="file" accept=".zip" required)
+                    span.file-cta
+                        span.file-label Select Dataset File
+        input(type="submit" value="Upload").button.centered-horizontally
+
+mixin model-upload
+    form(method="post" enctype="multipart/form-data" action="/api/model")
+        .field
+            label.label Model Name
+            input.input(type="text" placeholder="Model Name" name="name" required)
+        .field
+            label.label Model Slug
+            input.input(type="text" placeholder="Model Slug" name="slug" required)
+        .field
+            label.label Model Type
+            .select
+                select(name="type")
+                    each t in types
+                        option(value=t.id)= t.name
+        .field
+            label.label Dataset Trained On
+            i.fas.fa-upload
+            .select
+                select(name="dataset")
+                    each d in datasets
+                        option(value=d.id)= d.slug
+        .field
+            label.label Description
+            input.input(type="text" placeholder="Write a short description of the model..." name="description")
+        .field
+            .file.is-success
+                label.file-label
+                    input.file-input(type="file" name="file" accept=".zip" required)
+                    span.file-cta
+                        span.file-label Select Model File
+        input.button(type="submit" value="Upload").centered-horizontally

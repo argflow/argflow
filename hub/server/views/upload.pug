@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  include mixins/navbar
+  include mixins/upload
+  +navbar
+  
+  section.hero
+    .container
+      .centered-hero-box
+        if authenticated
+          .tabs.is-centered.is-boxed
+            ul
+              li#dataset-tab-li.is-active
+                a#dataset-tab-btn Dataset
+              li#model-tab-li
+                a#model-tab-btn Model
+          #dataset-tab
+            +dataset-upload
+          #model-tab.hidden
+            +model-upload
+        else
+          img(src='https://media0.giphy.com/media/njYrp176NQsHS/giphy.gif?cid=ecf05e473cd02800ee00d7b77b171485020e57a2bf584b68&rid=giphy.gif').centered-horizontally
+          br
+          p.centered-horizontally (uploading things requires authentication - please log in)
+  script(src='/js/upload.js')
